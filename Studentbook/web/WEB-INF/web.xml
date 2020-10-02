@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>Servlet.TestServlet</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>StudentServlet</servlet-name>
+        <servlet-class>Servlet.StudentServlet</servlet-class>
+        <init-param>
+            <param-name>driver</param-name>
+            <param-value>com.mysql.jdbc.Driver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dburl</param-name>
+            <param-value>jdbc:mysql://localhost:3306/jdbc</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbUsername</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbPassword</param-name>
+            <param-value></param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/TestServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StudentServlet</servlet-name>
+        <url-pattern>/student</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>JSPDeclarationDemo</servlet-name>
+        <servlet-class>Servlet.JSPDeclarationDfdemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JSPDeclarationDemo</servlet-name>
+        <url-pattern>/jspdeclare</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>EvenOdd</servlet-name>
+        <servlet-class>Servlet.EvenOddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EvenOdd</servlet-name>
+        <url-pattern>/evenodd</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>teacherservlet</servlet-name>
+        <servlet-class>Servlet.TeacherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>teacherservlet</servlet-name>
+        <url-pattern>/TeacherServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CalculationServlet</servlet-name>
+        <servlet-class>Servlet.CalculationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CalculationServlet</servlet-name>
+        <url-pattern>/CalculationServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SetCookieDemo</servlet-name>
+        <servlet-class>Servlet.SetCookieDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SetCookieDemo</servlet-name>
+        <url-pattern>/setCookie</url-pattern>
+    </servlet-mapping>
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>faces/index.xhtml</welcome-file>
+    </welcome-file-list>
+</web-app>
